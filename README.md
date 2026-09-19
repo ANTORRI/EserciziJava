@@ -1,2 +1,7 @@
 # EserciziJava
-Esercizi Java 2026-2027
+in uesto repository verranno
+mesi gli esercizi che 
+faremo durante l'anno.
+
+## Primo esercizio
+
