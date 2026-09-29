@@ -4,9 +4,8 @@ public class Main {
        Studente s= new Studente ("Andrea", "Capasso", 47, 1.74, 70);
        System.out.println(s.nome);
 
-
+       Studente s2 = new Studente(s);
     }
-
 
 }
 
