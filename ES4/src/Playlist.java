@@ -1,5 +1,4 @@
 
-
 public class Playlist {
     private String nome;
     private int QuantiBrani;
