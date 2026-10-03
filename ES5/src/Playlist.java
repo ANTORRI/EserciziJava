@@ -1,13 +1,13 @@
 public class Playlist {
     private String nome;
     private int QuantiBrani;
-    private String stato = "STOP";
+    private String stato ;
     int branoCorrente = 1;
 
-    public Playlist(String nome, int QuantiBrani, String stato) {
+    public Playlist (String nome, int QuantiBrani) {
         this.nome = nome;
         this.QuantiBrani = QuantiBrani;
-        this.stato = stato;
+        this.stato = "STOP";
     }
 
     public Playlist ( Playlist playlist) {
@@ -47,8 +47,7 @@ public class Playlist {
 
     public String stop(String stato){
 
-        if (stato.equals("STOP")){
-            this.stato = "STOP";
+        if (this.stato.equals("STOP")){
             branoCorrente = 1;
         }
         else {

@@ -2,7 +2,7 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-        Playlist c = new Playlist("abubu", 10, "PLAY");
+        Playlist c = new Playlist("abubu", 10);
         boolean continua = true;
 
         System.out.println();
