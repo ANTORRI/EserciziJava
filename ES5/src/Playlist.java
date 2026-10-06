@@ -1,14 +1,19 @@
-
-
 public class Playlist {
     private String nome;
-    private int getQuantiBrani;
-    private String stato = "STOP";
+    private int QuantiBrani;
+    private String stato ;
+    int branoCorrente = 1;
 
-    public Playlist(String nome, int getQuantiBrani, String stato) {
+    public Playlist (String nome, int QuantiBrani) {
         this.nome = nome;
-        this.getQuantiBrani = getQuantiBrani;
-        this.stato = stato;
+        this.QuantiBrani = QuantiBrani;
+        this.stato = "STOP";
+    }
+
+    public Playlist ( Playlist playlist) {
+        this.nome = playlist.nome;
+        this.QuantiBrani = playlist.QuantiBrani;
+        this.stato = playlist.stato;
     }
 
     public String getnome(){
@@ -16,36 +21,66 @@ public class Playlist {
     }
 
     public int getQuantiBrani(){
-        return getQuantiBrani;
+        return QuantiBrani;
+    }
+
+    public int getbranoCorrente(){
+        return branoCorrente;
     }
 
     public String play(String stato){
 
         if(!stato.equals("PLAY")){
-            stato = "PLAY";
+            this.stato = "PLAY";
         }
 
-        return stato;
+        return this.stato;
     }
 
     public String pause(String stato){
 
         if(!stato.equals("STOP")){
-            stato = "STOP";
+            this.stato = "PAUSE";
         }
-        else{
-            stato= "PAUSA";
-        }
-
-        return stato;
+        return this.stato;
     }
 
     public String stop(String stato){
-            stato = "STOP";
-        return stato;
+
+        if (this.stato.equals("STOP")){
+            branoCorrente = 1;
+        }
+        else {
+            this.stato = "STOP";
+        }
+        return this.stato;
     }
 
+    public int branoSuccessivo() {
+        if (!stato.equals("STOP")) {
+            if (branoCorrente == QuantiBrani) {
+                branoCorrente = 1;
+            } else {
+                branoCorrente++;
+            }
+        }
+        return branoCorrente;
+    }
+
+    public int branoPrecedente() {
+        if (!stato.equals("STOP")) {
+            if (branoCorrente == 1) {
+                branoCorrente = QuantiBrani;
+            } else {
+                branoCorrente--;
+            }
+        }
+        return branoCorrente;
+    }
+
+    public String toString(){
+        return ("Playlist: " + nome + "," + QuantiBrani + " brani in " + stato + " sul brano " + branoCorrente);
+    }
 
 }
-
 
