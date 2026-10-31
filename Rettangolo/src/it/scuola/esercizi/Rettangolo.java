@@ -15,6 +15,11 @@ public class Rettangolo {
 
     public double getBase(){
         double base;
+        if(x2>x1){
+            base = (x2 - x1);
+            return base;
+        }
+
         base = (x1 - x2);
 
         return base;
@@ -22,6 +27,11 @@ public class Rettangolo {
 
     public double getAltezza(){
         double altezza;
+        if(y2>y1){
+            altezza = (y2 - y1);
+            return altezza;
+        }
+
         altezza = (y1 - y2);
 
         return altezza;
